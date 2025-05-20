@@ -17,12 +17,12 @@ import (
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/pkg/config"
-	"github.com/crossplane/upjet/pkg/controller/handler"
-	"github.com/crossplane/upjet/pkg/metrics"
-	"github.com/crossplane/upjet/pkg/resource"
-	"github.com/crossplane/upjet/pkg/terraform"
-	tferrors "github.com/crossplane/upjet/pkg/terraform/errors"
+	"github.com/jwefers/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/controller/handler"
+	"github.com/jwefers/upjet/pkg/metrics"
+	"github.com/jwefers/upjet/pkg/resource"
+	"github.com/jwefers/upjet/pkg/terraform"
+	tferrors "github.com/jwefers/upjet/pkg/terraform/errors"
 )
 
 // TerraformPluginFrameworkAsyncConnector is a managed reconciler Connecter

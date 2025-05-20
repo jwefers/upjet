@@ -15,8 +15,8 @@ import (
 	"github.com/pkg/errors"
 	"golang.org/x/tools/go/packages"
 
-	"github.com/crossplane/upjet/pkg/config"
-	"github.com/crossplane/upjet/pkg/pipeline/templates"
+	"github.com/jwefers/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/pipeline/templates"
 )
 
 // NewVersionGenerator returns a new VersionGenerator.

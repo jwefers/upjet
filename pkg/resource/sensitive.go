@@ -18,7 +18,7 @@ import (
 	kerrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/crossplane/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/config"
 )
 
 const (
@@ -53,7 +53,7 @@ var (
 
 // SecretClient is the client to get sensitive data from kubernetes secrets
 //
-//go:generate go run github.com/golang/mock/mockgen -copyright_file ../../hack/boilerplate.txt -destination ./fake/mocks/mock.go -package mocks github.com/crossplane/upjet/pkg/resource SecretClient
+//go:generate go run github.com/golang/mock/mockgen -copyright_file ../../hack/boilerplate.txt -destination ./fake/mocks/mock.go -package mocks github.com/jwefers/upjet/pkg/resource SecretClient
 type SecretClient interface {
 	GetSecretData(ctx context.Context, ref *v1.SecretReference) (map[string][]byte, error)
 	GetSecretValue(ctx context.Context, sel v1.SecretKeySelector) ([]byte, error)

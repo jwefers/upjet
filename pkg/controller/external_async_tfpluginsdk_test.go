@@ -17,9 +17,9 @@ import (
 	tf "github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/pkg/config"
-	"github.com/crossplane/upjet/pkg/resource/fake"
-	"github.com/crossplane/upjet/pkg/terraform"
+	"github.com/jwefers/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/resource/fake"
+	"github.com/jwefers/upjet/pkg/terraform"
 )
 
 var (

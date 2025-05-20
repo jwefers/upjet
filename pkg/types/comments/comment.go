@@ -7,8 +7,8 @@ package comments
 import (
 	"strings"
 
-	"github.com/crossplane/upjet/pkg/config"
-	"github.com/crossplane/upjet/pkg/types/markers"
+	"github.com/jwefers/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/types/markers"
 )
 
 // Option is a comment option

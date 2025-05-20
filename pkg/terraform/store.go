@@ -27,9 +27,9 @@ import (
 	"k8s.io/utils/exec"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/pkg/config"
-	"github.com/crossplane/upjet/pkg/metrics"
-	"github.com/crossplane/upjet/pkg/resource"
+	"github.com/jwefers/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/metrics"
+	"github.com/jwefers/upjet/pkg/resource"
 )
 
 const (

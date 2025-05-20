@@ -19,7 +19,7 @@ directory on your local machine.
     go mod tidy
     # Generate getters/setters for management policies
     make generate
-    
+
     # Consume the latest crossplane-runtime:
     go get github.com/crossplane/crossplane-runtime@main
     go mod tidy
@@ -105,7 +105,7 @@ directory on your local machine.
 
     ```bash
     # Bump to the latest upjet
-    go get github.com/crossplane/upjet@main
+    go get github.com/jwefers/upjet@main
     go mod tidy
     ```
 

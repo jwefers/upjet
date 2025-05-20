@@ -13,9 +13,9 @@ import (
 
 	"github.com/crossplane/crossplane-runtime/pkg/errors"
 
-	"github.com/crossplane/upjet/pkg/config"
-	"github.com/crossplane/upjet/pkg/examples"
-	"github.com/crossplane/upjet/pkg/pipeline/templates"
+	"github.com/jwefers/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/examples"
+	"github.com/jwefers/upjet/pkg/pipeline/templates"
 )
 
 type terraformedInput struct {

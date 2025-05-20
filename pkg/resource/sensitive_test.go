@@ -19,10 +19,10 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/crossplane/upjet/pkg/config"
-	"github.com/crossplane/upjet/pkg/resource/fake"
-	"github.com/crossplane/upjet/pkg/resource/fake/mocks"
-	"github.com/crossplane/upjet/pkg/resource/json"
+	"github.com/jwefers/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/resource/fake"
+	"github.com/jwefers/upjet/pkg/resource/fake/mocks"
+	"github.com/jwefers/upjet/pkg/resource/json"
 )
 
 var (

@@ -7,9 +7,9 @@ package controller
 import (
 	"context"
 
-	"github.com/crossplane/upjet/pkg/config"
-	"github.com/crossplane/upjet/pkg/resource"
-	"github.com/crossplane/upjet/pkg/terraform"
+	"github.com/jwefers/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/resource"
+	"github.com/jwefers/upjet/pkg/terraform"
 )
 
 // TODO(muvaf): It's a bit weird that the functions return the struct of a

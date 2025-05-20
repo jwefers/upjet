@@ -61,7 +61,7 @@ The `aws_redshift_endpoint_access` resource is an SDK resource, go to
   ```
   - If there is no group, continue by adding the group name as a comment line.
 
-- For Framework resources, you will see a comment line like 
+- For Framework resources, you will see a comment line like
 `// @FrameworkResource` in the source code. If the resource is a Framework
 resource, add the external-name config to the
 `TerraformPluginFrameworkExternalNameConfigs` table.
@@ -69,7 +69,7 @@ resource, add the external-name config to the
 *Note: Look at the `config/externalnamenottested.go` file and check if there is
 a configuration for the resource and remove it from there.*
 
-5. Run `make submodules` to initialize the build submodule and run 
+5. Run `make submodules` to initialize the build submodule and run
 `make generate`. When the command process is completed, you will see that the
 controller, CRD, generated example, and other necessary files for the resource
 have been created and modified.
@@ -131,7 +131,7 @@ X. Many of the generated examples include these dependencies. However, in some
 cases, there may be missing dependencies. In these cases, please add the
 relevant dependencies to your example manifest. This is important both for you
 to pass the tests and to provide the correct manifests.
-``` 
+```
 
 - In our case, the generated example has required fields
 `spec.forProvider.clusterIdentifierSelector` and
@@ -229,7 +229,7 @@ an end-to-end pipeline during the resource configuration process. Together with
 the example manifest generation tool, it allows us to avoid manual interventions
 and shortens testing processes.
 
-## Automated Tests - Uptest 
+## Automated Tests - Uptest
 
 After providing all the required fields of the resource we added and added
 dependent resources, if any, we can start with automatic testing. To trigger
@@ -633,7 +633,7 @@ the resource and the import instructions read as the following:
 > GKE clusters can be imported using the project, location, and name.
 > If the project is omitted, the default provider value will be used.
 > Examples:
-> 
+>
 > ```console
 > $ terraform import google_container_cluster.mycluster projects/my-gcp-project/locations/us-east1-a/clusters/my-cluster
 > $ terraform import google_container_cluster.mycluster my-gcp-project/us-east1-a/my-cluster
@@ -721,15 +721,15 @@ detailed guide could also help you.
 [Terraform v1.5.5]: https://developer.hashicorp.com/terraform/install
 [goimports]: https://pkg.go.dev/golang.org/x/tools/cmd/goimports
 [provider-guide]: https://github.com/upbound/upjet/blob/main/docs/generating-a-provider.md
-[config-guide]: https://github.com/crossplane/upjet/blob/main/docs/configuring-a-resource.md
+[config-guide]: https://github.com/jwefers/upjet/blob/main/docs/configuring-a-resource.md
 [`aws_redshift_endpoint_access`]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/redshift_endpoint_access
 [Import]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/redshift_endpoint_access#import
 [External Name Cases]: #external-name-cases
 [source code]: https://github.com/hashicorp/terraform-provider-aws/blob/f222bd785228729dc1f5aad7d85c4d04a6109075/internal/service/redshift/endpoint_access.go#L24
 [cluster_identifier]: https://registry.terraform.io/providers/hashicorp/aws/5.35.0/docs/resources/redshift_endpoint_access#cluster_identifier
 [subnet_group_name]: https://registry.terraform.io/providers/hashicorp/aws/5.35.0/docs/resources/redshift_endpoint_access#subnet_group_name
-[automatically]: https://github.com/crossplane/upjet/blob/main/docs/configuring-a-resource.md#auto-cross-resource-reference-generation
-[Cross Resource Referencing]: https://github.com/crossplane/upjet/blob/main/docs/configuring-a-resource.md#cross-resource-referencing
+[automatically]: https://github.com/jwefers/upjet/blob/main/docs/configuring-a-resource.md#auto-cross-resource-reference-generation
+[Cross Resource Referencing]: https://github.com/jwefers/upjet/blob/main/docs/configuring-a-resource.md#cross-resource-referencing
 [a comment]: https://github.com/crossplane-contrib/provider-upjet-aws/pull/1314#issuecomment-2120539099
 [new commit]: https://github.com/crossplane-contrib/provider-upjet-aws/pull/1314/commits/b76e566eea5bd53450f2175e7e5a6e274934255b
 [Create a Kubernetes secret with the AWS credentials]: https://docs.crossplane.io/latest/getting-started/provider-aws/#create-a-kubernetes-secret-with-the-aws-credentials
