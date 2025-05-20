@@ -9,7 +9,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	"github.com/crossplane/upjet/pkg/config"
+	"github.com/jwefers/upjet/pkg/config"
 )
 
 func TestCrossplaneOptions_String(t *testing.T) {

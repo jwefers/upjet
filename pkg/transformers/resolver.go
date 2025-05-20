@@ -32,7 +32,7 @@ const (
 // the resolution source managed resources are no longer statically typed
 // and thus, the implementations no longer need to import the corresponding
 // API packages. This transformer is helpful in preventing the import cycles
-// described in https://github.com/crossplane/upjet/issues/96
+// described in https://github.com/jwefers/upjet/issues/96
 // and elsewhere. Please see TransformPackages for the details of the
 // transformation applied.
 type Resolver struct {

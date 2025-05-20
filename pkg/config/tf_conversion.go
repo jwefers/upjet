@@ -7,7 +7,7 @@ package config
 import (
 	"github.com/pkg/errors"
 
-	"github.com/crossplane/upjet/pkg/config/conversion"
+	"github.com/jwefers/upjet/pkg/config/conversion"
 )
 
 // Mode denotes the mode of the runtime Terraform conversion, e.g.,

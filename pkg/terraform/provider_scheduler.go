@@ -10,7 +10,7 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 	"github.com/pkg/errors"
 
-	tferrors "github.com/crossplane/upjet/pkg/terraform/errors"
+	tferrors "github.com/jwefers/upjet/pkg/terraform/errors"
 )
 
 // ProviderHandle represents native plugin (Terraform provider) process

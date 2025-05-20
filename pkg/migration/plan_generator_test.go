@@ -28,7 +28,7 @@ import (
 	"k8s.io/utils/ptr"
 	k8syaml "sigs.k8s.io/yaml"
 
-	"github.com/crossplane/upjet/pkg/migration/fake"
+	"github.com/jwefers/upjet/pkg/migration/fake"
 )
 
 func TestGeneratePlan(t *testing.T) {

@@ -10,7 +10,7 @@ import (
 	xpv1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	"github.com/crossplane/upjet/pkg/migration/fake/mocks"
+	"github.com/jwefers/upjet/pkg/migration/fake/mocks"
 )
 
 const (

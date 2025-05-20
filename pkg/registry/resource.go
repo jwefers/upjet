@@ -9,7 +9,7 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 
-	"github.com/crossplane/upjet/pkg/resource/json"
+	"github.com/jwefers/upjet/pkg/resource/json"
 )
 
 const (
