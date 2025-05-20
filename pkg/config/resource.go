@@ -25,8 +25,8 @@ import (
 	"k8s.io/utils/ptr"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/v2/pkg/config/conversion"
-	"github.com/crossplane/upjet/v2/pkg/registry"
+	"github.com/jwefers/upjet/pkg/v2/config/conversion"
+	"github.com/jwefers/upjet/pkg/v2/registry"
 )
 
 // A ListType is a type of list.

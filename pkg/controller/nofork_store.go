@@ -14,8 +14,8 @@ import (
 	tfsdk "github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
 	"k8s.io/apimachinery/pkg/types"
 
-	"github.com/crossplane/upjet/v2/pkg/resource"
-	"github.com/crossplane/upjet/v2/pkg/terraform"
+	"github.com/jwefers/upjet/pkg/v2/resource"
+	"github.com/jwefers/upjet/pkg/v2/terraform"
 )
 
 // AsyncTracker holds information for a managed resource to track the

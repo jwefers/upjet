@@ -12,8 +12,8 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/pkg/errors"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/types/markers"
+	"github.com/jwefers/upjet/pkg/v2/config"
+	"github.com/jwefers/upjet/pkg/v2/types/markers"
 )
 
 func TestComment_Build(t *testing.T) {

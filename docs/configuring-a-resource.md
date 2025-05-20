@@ -116,7 +116,7 @@ conditions:
 
 ```go
 import (
- "github.com/crossplane/upjet/v2/pkg/config"
+ "github.com/jwefers/upjet/v2/pkg/config"
  ...
 )
 
@@ -143,7 +143,7 @@ also omit `bucket` and `bucket_prefix` arguments from the spec with
 
 ```go
 import (
- "github.com/crossplane/upjet/v2/pkg/config"
+ "github.com/jwefers/upjet/v2/pkg/config"
  ...
 )
 
@@ -175,7 +175,7 @@ Here, we can just use [IdentifierFromProvider] configuration:
 
 ```go
 import (
- "github.com/crossplane/upjet/v2/pkg/config"
+ "github.com/jwefers/upjet/pkg/v2/config"
  ...
 )
 
@@ -206,7 +206,7 @@ this id back (`GetIDFn`).
 
 ```go
 import (
- "github.com/crossplane/upjet/v2/pkg/config"
+ "github.com/jwefers/upjet/pkg/v2/config"
  ...
 )
 
@@ -653,7 +653,7 @@ late-initialization behaviour. Thus, Upjet provides an extensible
 behaviour.
 
 The associated resource struct is defined
-[here](https://github.com/crossplane/upjet/blob/c9e21387298d8ed59fcd71c7f753ec401a3383a5/pkg/config/resource.go#L91)
+[here](https://github.com/jwefers/upjet/blob/c9e21387298d8ed59fcd71c7f753ec401a3383a5/pkg/config/resource.go#L91)
 as follows:
 
 ```go
@@ -869,7 +869,7 @@ type Initializer interface {
 So, an interface must be passed to the related configuration field for adding
 initializers for a resource.
 
-[Upjet]: https://github.com/crossplane/upjet
+[Upjet]: https://github.com/jwefers/upjet
 [External name]: #external-name
 [Cross Resource Referencing]: #cross-resource-referencing
 [Additional Sensitive Fields and Custom Connection Details]: #additional-sensitive-fields-and-custom-connection-details
@@ -877,9 +877,9 @@ initializers for a resource.
 [Overriding Terraform Resource Schema]: #overriding-terraform-resource-schema
 [the external name documentation]: https://docs.crossplane.io/master/concepts/managed-resources/#naming-external-resources
 [import section]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_access_key#import
-[the types for the External Name configuration]: https://github.com/crossplane/upjet/blob/main/pkg/config/resource.go#L68
+[the types for the External Name configuration]: https://github.com/jwefers/upjet/blob/main/pkg/config/resource.go#L68
 [aws_iam_user]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user
-[NameAsIdentifier]: https://github.com/crossplane/upjet/blob/main/pkg/config/externalname.go#L28
+[NameAsIdentifier]: https://github.com/jwefers/upjet/blob/main/pkg/config/externalname.go#L28
 [aws_s3_bucket]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
 [import section of s3 bucket]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import
 [bucket]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#bucket
@@ -888,20 +888,20 @@ initializers for a resource.
 [import section of aws_vpc]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc#import
 [arguments list]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc#argument-reference
 [example usages]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc#example-usage
-[IdentifierFromProvider]: https://github.com/crossplane/upjet/blob/main/pkg/config/externalname.go#L42
+[IdentifierFromProvider]: https://github.com/jwefers/upjet/blob/main/pkg/config/externalname.go#L42
 [a similar identifier]: https://www.terraform.io/docs/glossary#id
 [import section of azurerm_sql_server]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_server#import
 [handle dependencies]: https://docs.crossplane.io/master/concepts/managed-resources/#referencing-other-resources
 [user]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_access_key#user
 [generate reference resolution methods]: https://github.com/crossplane/crossplane-tools/pull/35
-[configuration]: https://github.com/crossplane/upjet/blob/942508c5370a697b1cb81d074933ba75d8f1fb4f/pkg/config/resource.go#L172
+[configuration]: https://github.com/jwefers/upjet/blob/942508c5370a697b1cb81d074933ba75d8f1fb4f/pkg/config/resource.go#L172
 [iam_access_key]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_access_key#argument-reference
 [kms key]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ebs_volume#kms_key_id
 [connection details]: https://docs.crossplane.io/master/concepts/managed-resources/#writeconnectionsecrettoref
 [id]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_access_key#id
 [secret]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_access_key#secret
-[`external.Observe`]: https://github.com/crossplane/upjet/blob/main/pkg/controller/external.go#L175
-[late-initialization customization API]: https://github.com/crossplane/upjet/blob/main/pkg/resource/lateinit.go#L45
+[`external.Observe`]: https://github.com/jwefers/upjet/blob/main/pkg/controller/external.go#L175
+[late-initialization customization API]: https://github.com/jwefers/upjet/blob/main/pkg/resource/lateinit.go#L45
 [`address_prefix`]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet#address_prefix
 [Terraform schema of the resource]: https://github.com/hashicorp/terraform-plugin-sdk/blob/e3325b095ef501cf551f7935254ce942c44c1af0/helper/schema/schema.go#L34
 [Type]: https://github.com/hashicorp/terraform-plugin-sdk/blob/e3325b095ef501cf551f7935254ce942c44c1af0/helper/schema/schema.go#L52
@@ -914,8 +914,8 @@ initializers for a resource.
 [AWS region]: https://github.com/crossplane-contrib/provider-upjet-aws/blob/199dbf93b8c67632db50b4f9c0adbd79021146a3/config/overrides.go#L42
 [this figure]: ../docs/images/upjet-externalname.png
 [Initializers]: #initializers
-[InitializerFns]: https://github.com/crossplane/upjet/blob/92d1af84d24241bef08e6b4a2cfe1ab66a93308a/pkg/config/resource.go#L427
-[NewInitializerFn]: https://github.com/crossplane/upjet/blob/92d1af84d24241bef08e6b4a2cfe1ab66a93308a/pkg/config/resource.go#L265
+[InitializerFns]: https://github.com/jwefers/upjet/blob/92d1af84d24241bef08e6b4a2cfe1ab66a93308a/pkg/config/resource.go#L427
+[NewInitializerFn]: https://github.com/jwefers/upjet/blob/92d1af84d24241bef08e6b4a2cfe1ab66a93308a/pkg/config/resource.go#L265
 [crossplane-runtime]: https://github.com/crossplane/crossplane-runtime/blob/428b7c3903756bb0dcf5330f40298e1fa0c34301/pkg/reconciler/managed/reconciler.go#L138
 [tagging convention]: https://github.com/crossplane/crossplane/blob/60c7df9/design/one-pager-managed-resource-api-design.md#external-resource-labeling
 [Naming Conventions - One Pager Managed Resource API Design]: https://github.com/crossplane/crossplane/blob/main/design/one-pager-managed-resource-api-design.md#naming-conventions

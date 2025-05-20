@@ -16,9 +16,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	ctrl "sigs.k8s.io/controller-runtime/pkg/manager"
 
-	"github.com/crossplane/upjet/v2/pkg/controller/handler"
-	"github.com/crossplane/upjet/v2/pkg/resource"
-	"github.com/crossplane/upjet/v2/pkg/terraform"
+	"github.com/jwefers/upjet/pkg/v2/controller/handler"
+	"github.com/jwefers/upjet/pkg/v2/resource"
+	"github.com/jwefers/upjet/pkg/v2/terraform"
 )
 
 const (

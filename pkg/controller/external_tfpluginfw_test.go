@@ -25,9 +25,9 @@ import (
 	"github.com/pkg/errors"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/resource/fake"
-	"github.com/crossplane/upjet/v2/pkg/terraform"
+	"github.com/jwefers/upjet/pkg/v2/config"
+	"github.com/jwefers/upjet/pkg/v2/resource/fake"
+	"github.com/jwefers/upjet/pkg/v2/terraform"
 )
 
 func newBaseObject() fake.Terraformed {

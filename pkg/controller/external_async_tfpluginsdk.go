@@ -17,12 +17,12 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/controller/handler"
-	"github.com/crossplane/upjet/v2/pkg/metrics"
-	"github.com/crossplane/upjet/v2/pkg/resource"
-	"github.com/crossplane/upjet/v2/pkg/terraform"
-	tferrors "github.com/crossplane/upjet/v2/pkg/terraform/errors"
+	"github.com/jwefers/upjet/pkg/v2/config"
+	"github.com/jwefers/upjet/pkg/v2/controller/handler"
+	"github.com/jwefers/upjet/pkg/v2/metrics"
+	"github.com/jwefers/upjet/pkg/v2/resource"
+	"github.com/jwefers/upjet/pkg/v2/terraform"
+	tferrors "github.com/jwefers/upjet/pkg/v2/terraform/errors"
 )
 
 var defaultAsyncTimeout = 1 * time.Hour

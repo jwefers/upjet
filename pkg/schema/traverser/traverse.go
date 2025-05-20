@@ -8,7 +8,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/pkg/errors"
 
-	"github.com/crossplane/upjet/v2/pkg/types/name"
+	"github.com/jwefers/upjet/v2/pkg/types/name"
 )
 
 const (

@@ -45,7 +45,7 @@ variables in the `Makefile`:
   |`TERRAFORM_PROVIDER_DOWNLOAD_NAME` | The name of the provider in the [Terraform registry](https://releases.hashicorp.com/) |
   |`TERRAFORM_NATIVE_PROVIDER_BINARY` | The name of the binary in the Terraform provider. This follows the pattern `terraform-provider-{provider name}_v{provider version}`. |
   |`TERRAFORM_DOCS_PATH` | The relative path, from the root of the repository, where the provider resource documentation exist. |
-  
+
   For example, for the [Terraform GitHub provider], the variables are:
 
   ```makefile
@@ -126,7 +126,7 @@ variables in the `Makefile`:
     - Create custom configuration directory for whole repository group
 
     ```bash
-    mkdir config/repository    
+    mkdir config/repository
     ```
 
     - Create custom configuration directory for whole branch group
@@ -141,7 +141,7 @@ variables in the `Makefile`:
     cat <<EOF > config/repository/config.go
     package repository
 
-    import "github.com/crossplane/upjet/v2/pkg/config"
+    import "github.com/jwefers/upjet/pkg/v2/config"
 
     // Configure configures individual resources by adding custom ResourceConfigurators.
     func Configure(p *config.Provider) {
@@ -163,7 +163,7 @@ variables in the `Makefile`:
     cat <<EOF > config/branch/config.go
     package branch
 
-    import "github.com/crossplane/upjet/v2/pkg/config"
+    import "github.com/jwefers/upjet/pkg/v2/config"
 
     func Configure(p *config.Provider) {
         p.AddResourceConfigurator("github_branch", func(r *config.Resource) {

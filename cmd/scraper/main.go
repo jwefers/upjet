@@ -10,7 +10,7 @@ import (
 
 	"github.com/alecthomas/kingpin/v2"
 
-	"github.com/crossplane/upjet/v2/pkg/registry"
+	"github.com/jwefers/upjet/v2/pkg/registry"
 )
 
 func main() {

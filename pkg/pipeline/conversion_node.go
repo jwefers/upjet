@@ -14,7 +14,7 @@ import (
 	"github.com/muvaf/typewriter/pkg/wrapper"
 	"github.com/pkg/errors"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/config"
 )
 
 var (

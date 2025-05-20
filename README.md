@@ -8,10 +8,10 @@ SPDX-License-Identifier: CC-BY-4.0
 
 <div align="center">
 
-![CI](https://github.com/crossplane/upjet/workflows/CI/badge.svg)
-[![GitHub release](https://img.shields.io/github/release/crossplane/upjet/all.svg)](https://github.com/crossplane/upjet/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/crossplane/upjet)](https://goreportcard.com/report/github.com/crossplane/upjet)
-[![Contributors](https://img.shields.io/github/contributors/crossplane/upjet)](https://github.com/crossplane/upjet/graphs/contributors)
+![CI](https://github.com/jwefers/upjet/workflows/CI/badge.svg)
+[![GitHub release](https://img.shields.io/github/release/jwefers/upjet/all.svg)](https://github.com/jwefers/upjet/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jwefers/upjet)](https://goreportcard.com/report/github.com/jwefers/upjet)
+[![Contributors](https://img.shields.io/github/contributors/jwefers/upjet)](https://github.com/jwefers/upjet/graphs/contributors)
 [![Slack](https://img.shields.io/badge/Slack-4A154B?logo=slack)](https://crossplane.slack.com/archives/C05T19TB729)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/crossplane_io)](https://twitter.com/crossplane_io)
 
@@ -38,7 +38,7 @@ directory.
 ## Report a Bug
 
 For filing bugs, suggesting improvements, or requesting new features, please
-open an [issue](https://github.com/crossplane/upjet/issues).
+open an [issue](https://github.com/jwefers/upjet/issues).
 
 ## Contact
 

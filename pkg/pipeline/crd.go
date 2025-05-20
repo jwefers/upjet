@@ -17,10 +17,10 @@ import (
 	"github.com/muvaf/typewriter/pkg/wrapper"
 	"github.com/pkg/errors"
 
-	tjpkg "github.com/crossplane/upjet/v2/pkg"
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/pipeline/templates"
-	tjtypes "github.com/crossplane/upjet/v2/pkg/types"
+	tjpkg "github.com/jwefers/upjet/pkg/v2"
+	"github.com/jwefers/upjet/pkg/v2/config"
+	"github.com/jwefers/upjet/pkg/v2/pipeline/templates"
+	tjtypes "github.com/jwefers/upjet/pkg/v2/types"
 )
 
 const (

@@ -15,8 +15,8 @@ import (
 	"github.com/muvaf/typewriter/pkg/wrapper"
 	"github.com/pkg/errors"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/pipeline/templates"
+	"github.com/jwefers/upjet/pkg/v2/config"
+	"github.com/jwefers/upjet/pkg/v2/pipeline/templates"
 )
 
 // NewSetupGenerator returns a new generator that sets up controllers.

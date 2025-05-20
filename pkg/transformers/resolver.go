@@ -6,16 +6,17 @@ package transformers
 
 import (
 	"fmt"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
-	"github.com/pkg/errors"
-	"github.com/spf13/afero"
 	"go/ast"
 	"go/format"
 	"go/token"
-	"golang.org/x/tools/go/ast/astutil"
-	"golang.org/x/tools/go/packages"
 	"path/filepath"
 	"strings"
+
+	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
+	"github.com/pkg/errors"
+	"github.com/spf13/afero"
+	"golang.org/x/tools/go/ast/astutil"
+	"golang.org/x/tools/go/packages"
 )
 
 const (
@@ -30,7 +31,7 @@ const (
 // the resolution source managed resources are no longer statically typed
 // and thus, the implementations no longer need to import the corresponding
 // API packages. This transformer is helpful in preventing the import cycles
-// described in https://github.com/crossplane/upjet/issues/96
+// described in https://github.com/jwefers/upjet/issues/96
 // and elsewhere. Please see TransformPackages for the details of the
 // transformation applied.
 type Resolver struct {

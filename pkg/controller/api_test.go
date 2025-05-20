@@ -17,9 +17,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	ctrl "sigs.k8s.io/controller-runtime/pkg/manager"
 
-	"github.com/crossplane/upjet/v2/pkg/resource"
-	"github.com/crossplane/upjet/v2/pkg/resource/fake"
-	tjerrors "github.com/crossplane/upjet/v2/pkg/terraform/errors"
+	"github.com/jwefers/upjet/pkg/v2/resource"
+	"github.com/jwefers/upjet/pkg/v2/resource/fake"
+	tjerrors "github.com/jwefers/upjet/pkg/v2/terraform/errors"
 )
 
 func TestAPICallbacksCreate(t *testing.T) {
