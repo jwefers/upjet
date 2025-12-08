@@ -10,13 +10,13 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/registry"
-	"github.com/crossplane/upjet/v2/pkg/types"
+	"github.com/jwefers/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/registry"
+	"github.com/jwefers/upjet/v2/pkg/types"
 )
 
 const (
-	extractorPackagePath      = "github.com/crossplane/upjet/v2/pkg/resource"
+	extractorPackagePath      = "github.com/jwefers/upjet/v2/pkg/resource"
 	extractResourceIDFuncPath = extractorPackagePath + ".ExtractResourceID()"
 	fmtExtractParamFuncPath   = extractorPackagePath + `.ExtractParamPath("%s",%t)`
 )

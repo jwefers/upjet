@@ -9,9 +9,9 @@ import (
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/config/conversion"
-	"github.com/crossplane/upjet/v2/pkg/resource"
+	"github.com/jwefers/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/config/conversion"
+	"github.com/jwefers/upjet/v2/pkg/resource"
 )
 
 const (

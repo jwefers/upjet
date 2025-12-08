@@ -5,8 +5,8 @@ SPDX-License-Identifier: CC-BY-4.0
 -->
 ## Migration Framework
 
-The [migration package](https://github.com/crossplane/upjet/tree/main/pkg/migration)
-in the [upjet](https://github.com/crossplane/upjet) repository contains a framework
+The [migration package](https://github.com/jwefers/upjet/tree/main/pkg/migration)
+in the [upjet](https://github.com/jwefers/upjet) repository contains a framework
 that allows users to write converters and migration tools that are suitable for
 their system and use. This document will focus on the technical details of the
 Migration Framework and how to use it.
@@ -63,7 +63,7 @@ and examples for API migration.
 
 1. **Resource Converter** converts a managed resource from the migration source
 provider's schema to the migration target provider's schema. The function of
-the interface is [Resource](https://github.com/crossplane/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L32).
+the interface is [Resource](https://github.com/jwefers/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L32).
 `Resource` takes a managed resource and returns zero or more managed resources to
 be created.
 
@@ -131,14 +131,14 @@ points to be addressed in this regard are listed below.
   should also be done in converter functions.
 
 Another important case is when an MR in the source API corresponds to more than
-one MR in the target API. Since the [Resource](https://github.com/crossplane/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L32)
+one MR in the target API. Since the [Resource](https://github.com/jwefers/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L32)
 function returns a list of MRs, this infrastructure is ready. There is also an
 example converter [here](https://github.com/upbound/extensions-migration/blob/main/converters/provider-aws/ec2/routetable.go).
 
 2. **Composed Template Converter** converts a Composition's ComposedTemplate
 from the migration source provider's schema to the migration target provider's
 schema. Conversion of the `Base` must be handled by a ResourceConverter.
-This interface has a function [ComposedTemplate](https://github.com/crossplane/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L49).
+This interface has a function [ComposedTemplate](https://github.com/jwefers/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L49).
 `ComposedTemplate` receives a migration source v1.ComposedTemplate that has been
 converted, by a resource converter, to the v1.ComposedTemplates with the new
 shapes specified in the `convertedTemplates` argument. Conversion of the
@@ -150,7 +150,7 @@ ComposedTemplate must only convert the other fields (`Patches`,
 ComposedTemplate(sourceTemplate xpv1.ComposedTemplate, convertedTemplates ...*xpv1.ComposedTemplate) error
 ```
 
-There is a generic Composed Template implementation [DefaultCompositionConverter](https://github.com/crossplane/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/registry.go#L481).
+There is a generic Composed Template implementation [DefaultCompositionConverter](https://github.com/jwefers/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/registry.go#L481).
 `DefaultCompositionConverter` is a generic composition converter. It takes a
 `conversionMap` that is fieldpath map for conversion. Key of the conversionMap
 points to the source field and the Value of the conversionMap points to the
@@ -163,7 +163,7 @@ conversion is done. The rationale is to convert the Composition-wide patch sets
 before any resource-specific conversions so that migration targets can
 automatically inherit converted patch sets if their schemas match them.
 Registered PatchSetConverters will be called in the order they are registered.
-This interface has function [PatchSets](https://github.com/crossplane/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L69).
+This interface has function [PatchSets](https://github.com/jwefers/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L69).
 `PatchSets` converts the `spec.patchSets` of a Composition from the migration
 source provider's schema to the migration target provider's schema.
 
@@ -184,7 +184,7 @@ can be used in common.
 
 #### Registry
 
-Registry is a bunch of converters. Every Converter is keyed with the associated 
+Registry is a bunch of converters. Every Converter is keyed with the associated
 `schema.GroupVersionKind`s and an associated `runtime.Scheme` with which the
 corresponding types are registered. All converters intended to be used during
 migration must be registered in the Registry. For Kinds that are not registered
@@ -218,26 +218,26 @@ functions. These functions are, Resource Converters, Composition Converters and
 PatchSet Converters.
 
 ```go
-registry.RegisterAPIConversionFunctions(ec2v1beta1.VPCGroupVersionKind, ec2.VPCResource, 
-	migration.DefaultCompositionConverter(nil, common.ConvertComposedTemplateTags), 
+registry.RegisterAPIConversionFunctions(ec2v1beta1.VPCGroupVersionKind, ec2.VPCResource,
+	migration.DefaultCompositionConverter(nil, common.ConvertComposedTemplateTags),
 	common.DefaultPatchSetsConverter)
 ```
 
 #### Source
 
-[Source](https://github.com/crossplane/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L114)
+[Source](https://github.com/jwefers/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L114)
 is a source for reading resource manifests. It is an interface used to read the
 resources subject to migration.
 
 There were currently two implementations of the Source interface.
 
-[File System Source](https://github.com/crossplane/upjet/blob/main/pkg/migration/filesystem.go)
+[File System Source](https://github.com/jwefers/upjet/blob/main/pkg/migration/filesystem.go)
 is a source implementation to read resources from the file system. It is the
 source type that the user will use to read the resources that they want to
 migrate for their cases, such as those in their local system, those in a GitHub
 repository, etc.
 
-[Kubernetes Source](https://github.com/crossplane/upjet/blob/main/pkg/migration/kubernetes.go)
+[Kubernetes Source](https://github.com/jwefers/upjet/blob/main/pkg/migration/kubernetes.go)
 is a source implementation to read resources from Kubernetes cluster. It is the
 source type that the user will use to read the resources that they want to
 migrate for their cases in their Kubernetes Cluster.  There are two types for
@@ -263,7 +263,7 @@ migration.WithMultipleSources(sources...)
 
 #### Target
 
-[Target](https://github.com/crossplane/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L132)
+[Target](https://github.com/jwefers/upjet/blob/cc55f3952474e51ee31cd645c4a9578248de7f3a/pkg/migration/interfaces.go#L132)
 is a target where resource manifests can be manipulated
 (e.g., added, deleted, patched, etc.). It is the interface for storing the
 manifests resulting from the migration steps. Currently only File System Target
@@ -275,8 +275,8 @@ output when they start the migration process will be stored in the File System.
 Plan represents a migration plan for migrating managed resources, and associated
 composites and claims from a migration source provider to a migration target provider.
 
-PlanGenerator generates a Migration Plan reading the manifests available from 
-`source`, converting managed resources and compositions using the available 
+PlanGenerator generates a Migration Plan reading the manifests available from
+`source`, converting managed resources and compositions using the available
 `Converter`s registered in the `registry` and writing the output manifests to
 the specified `target`.
 
@@ -389,7 +389,7 @@ migration.
 While creating a Plan Generator object, user may set some options by using the
 option functions. The most important two option functions are:
 
-- WithErrorOnInvalidPatchSchema returns a PlanGeneratorOption for configuring 
+- WithErrorOnInvalidPatchSchema returns a PlanGeneratorOption for configuring
 whether the PlanGenerator should error and stop the migration plan generation in
 case an error is encountered while checking a patch statement's conformance to
 the migration source or target.

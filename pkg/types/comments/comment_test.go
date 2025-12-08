@@ -12,9 +12,9 @@ import (
 	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/types/markers"
-	"github.com/crossplane/upjet/v2/pkg/types/structtag"
+	"github.com/jwefers/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/types/markers"
+	"github.com/jwefers/upjet/v2/pkg/types/structtag"
 )
 
 func TestCommentBuild(t *testing.T) {

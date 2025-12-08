@@ -13,10 +13,10 @@ import (
 
 	"k8s.io/utils/ptr"
 
-	"github.com/crossplane/upjet/v2/pkg/types/comments"
-	"github.com/crossplane/upjet/v2/pkg/types/markers"
-	"github.com/crossplane/upjet/v2/pkg/types/markers/kubebuilder"
-	"github.com/crossplane/upjet/v2/pkg/types/name"
+	"github.com/jwefers/upjet/v2/pkg/types/comments"
+	"github.com/jwefers/upjet/v2/pkg/types/markers"
+	"github.com/jwefers/upjet/v2/pkg/types/markers/kubebuilder"
+	"github.com/jwefers/upjet/v2/pkg/types/name"
 )
 
 const (

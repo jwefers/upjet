@@ -9,8 +9,8 @@ import (
 
 	"github.com/crossplane/crossplane-runtime/v2/pkg/controller"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/terraform"
+	"github.com/jwefers/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/terraform"
 )
 
 // Options contains incriminating options for a given Upjet controller instance.

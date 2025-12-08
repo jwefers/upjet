@@ -99,7 +99,7 @@ have been created and modified.
     	modified:   internal/controller/cluster/zz_redshift_setup.go
     	modified:   internal/controller/namespaced/zz_monolith_setup.go
     	modified:   internal/controller/namespaced/zz_redshift_setup.go
-    
+
     Untracked files:
       (use "git add <file>..." to include in what will be committed)
     	apis/cluster/redshift/v1beta1/zz_endpointaccess_terraformed.go
@@ -662,7 +662,7 @@ the resource and the import instructions read as the following:
 > GKE clusters can be imported using the project, location, and name.
 > If the project is omitted, the default provider value will be used.
 > Examples:
-> 
+>
 > ```console
 > $ terraform import google_container_cluster.mycluster projects/my-gcp-project/locations/us-east1-a/clusters/my-cluster
 > $ terraform import google_container_cluster.mycluster my-gcp-project/us-east1-a/my-cluster
@@ -754,15 +754,15 @@ detailed guide could also help you.
 [Terraform v1.5.5]: https://developer.hashicorp.com/terraform/install
 [goimports]: https://pkg.go.dev/golang.org/x/tools/cmd/goimports
 [provider-guide]: https://github.com/upbound/upjet/blob/main/docs/generating-a-provider.md
-[config-guide]: https://github.com/crossplane/upjet/blob/main/docs/configuring-a-resource.md
+[config-guide]: https://github.com/jwefers/upjet/blob/main/docs/configuring-a-resource.md
 [`aws_redshift_endpoint_access`]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/redshift_endpoint_access
 [Import]: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/redshift_endpoint_access#import
 [External Name Cases]: #external-name-cases
 [source code]: https://github.com/hashicorp/terraform-provider-aws/blob/f222bd785228729dc1f5aad7d85c4d04a6109075/internal/service/redshift/endpoint_access.go#L24
 [cluster_identifier]: https://registry.terraform.io/providers/hashicorp/aws/5.35.0/docs/resources/redshift_endpoint_access#cluster_identifier
 [subnet_group_name]: https://registry.terraform.io/providers/hashicorp/aws/5.35.0/docs/resources/redshift_endpoint_access#subnet_group_name
-[automatically]: https://github.com/crossplane/upjet/blob/main/docs/configuring-a-resource.md#auto-cross-resource-reference-generation
-[Cross Resource Referencing]: https://github.com/crossplane/upjet/blob/main/docs/configuring-a-resource.md#cross-resource-referencing
+[automatically]: https://github.com/jwefers/upjet/blob/main/docs/configuring-a-resource.md#auto-cross-resource-reference-generation
+[Cross Resource Referencing]: https://github.com/jwefers/upjet/blob/main/docs/configuring-a-resource.md#cross-resource-referencing
 [a comment]: https://github.com/crossplane-contrib/provider-upjet-aws/pull/1314#issuecomment-2120539099
 [new commit]: https://github.com/crossplane-contrib/provider-upjet-aws/pull/1314/commits/b76e566eea5bd53450f2175e7e5a6e274934255b
 [Create a Kubernetes secret with the AWS credentials]: https://docs.crossplane.io/latest/getting-started/provider-aws/#create-a-kubernetes-secret-with-the-aws-credentials

@@ -17,13 +17,13 @@ import (
 	"k8s.io/apimachinery/pkg/util/sets"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/controller/handler"
-	"github.com/crossplane/upjet/v2/pkg/metrics"
-	"github.com/crossplane/upjet/v2/pkg/resource"
-	"github.com/crossplane/upjet/v2/pkg/resource/json"
-	"github.com/crossplane/upjet/v2/pkg/terraform"
-	tferrors "github.com/crossplane/upjet/v2/pkg/terraform/errors"
+	"github.com/jwefers/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/controller/handler"
+	"github.com/jwefers/upjet/v2/pkg/metrics"
+	"github.com/jwefers/upjet/v2/pkg/resource"
+	"github.com/jwefers/upjet/v2/pkg/resource/json"
+	"github.com/jwefers/upjet/v2/pkg/terraform"
+	tferrors "github.com/jwefers/upjet/v2/pkg/terraform/errors"
 )
 
 const (
@@ -346,7 +346,7 @@ func (e *external) Observe(ctx context.Context, mg xpresource.Managed) (managed.
 
 		// TODO(cem): Consider skipping diff calculation (terraform plan) to
 		// avoid potential config validation errors in the import path. See
-		// https://github.com/crossplane/upjet/pull/461
+		// https://github.com/jwefers/upjet/pull/461
 		plan, err := e.workspace.Plan(ctx)
 		if err != nil {
 			return managed.ExternalObservation{}, errors.Wrap(err, errPlan)

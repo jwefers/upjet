@@ -62,13 +62,13 @@ with following the notes:
 
 - Providers still serve legacy cluster-scoped MRs as is.
   - After upgrade, existing cluster-scoped MRs continue to work.
-  - Only exception is the removal of `spec.publishConnectionDetailsTo` which was an alpha feature, you need to remove those before upgrading if any usage.  
+  - Only exception is the removal of `spec.publishConnectionDetailsTo` which was an alpha feature, you need to remove those before upgrading if any usage.
 - `SafeStart` capability will be disabled. The guide explains the implementation details for properly implementing the safe start.
 - Namespaced MRs still get installed alongside cluster-scoped MRs. They can be used standalone, but you cannot compose them in Crossplane v1.
 
 ## Steps
 
-You can refer to [Crossplane v2 compatibility PR](https://github.com/crossplane/upjet-provider-template/pull/115) in the [crossplane/upjet-provider-template](https://github.com/crossplane/upjet-provider-template) repo.
+You can refer to [Crossplane v2 compatibility PR](https://github.com/jwefers/upjet-provider-template/pull/115) in the [crossplane/upjet-provider-template](https://github.com/jwefers/upjet-provider-template) repo.
 
 ### Summary
 
@@ -86,7 +86,7 @@ You can refer to [Crossplane v2 compatibility PR](https://github.com/crossplane/
 ```go
 	github.com/crossplane/crossplane-runtime/v2 v2.0.0
 	github.com/crossplane/crossplane-tools master
-	github.com/crossplane/upjet/v2 v2.1.0
+	github.com/jwefers/upjet/v2 v2.1.0
 ```
 
 ```shell
@@ -110,7 +110,7 @@ do the following replacements in your import paths
 
 ```text
 github.com/crossplane/crossplane-runtime/ => github.com/crossplane/crossplane-runtime/v2/
-github.com/crossplane/upjet/ => github.com/crossplane/upjet/v2/ 
+github.com/jwefers/upjet/ => github.com/jwefers/upjet/v2/
 ```
 
 ### Remove External Secret Store (ESS)-related APIs
@@ -275,7 +275,7 @@ After resolving the referenced provider config, convert the resolved config to a
 If there are namespaced references to the secrets, overwrite them with MR namespace.
 
 > [!TIP]
-> See the [example reference implementation](https://github.com/crossplane/upjet-provider-template/pull/115/files#diff-6f2f274d5365acc2b5e2349350552e6b0b3cc952374a585ee47bb9a1ca96c298) in the provider template repo.
+> See the [example reference implementation](https://github.com/jwefers/upjet-provider-template/pull/115/files#diff-6f2f274d5365acc2b5e2349350552e6b0b3cc952374a585ee47bb9a1ca96c298) in the provider template repo.
 
 ### `config` directory
 
@@ -306,7 +306,7 @@ config/
 
 ```go
 import (
-	// 
+	//
 	fooCluster "github.com/upbound/upjet-provider-template/config/cluster/foo"
 	fooNamespaced "github.com/upbound/upjet-provider-template/config/namespaced/foo"
 )
@@ -331,7 +331,7 @@ func GetProviderNamespaced() *ujconfig.Provider {
 ```
 
 > [!TIP]
-> Check the [example change](https://github.com/crossplane/upjet-provider-template/pull/115/files#diff-483ebdb1139323e5256859b870054a99a208f4a1d60a0f5e51583c22d8600240) upjet provider template.
+> Check the [example change](https://github.com/jwefers/upjet-provider-template/pull/115/files#diff-483ebdb1139323e5256859b870054a99a208f4a1d60a0f5e51583c22d8600240) upjet provider template.
 
 ### `cmd/generator/main.go`
 
@@ -440,7 +440,7 @@ pipeline run should be invoked with both cluster-scoped and namespace-scoped pro
 ```
 
 > [!TIP]
-> Check the [example commit](https://github.com/crossplane/upjet-provider-template/pull/115/files#diff-36b6d20eb5aea66cf39f8d94111bd96513626ef7f61459f0d9e8e9507ded1d17) in the upjet provider template.
+> Check the [example commit](https://github.com/jwefers/upjet-provider-template/pull/115/files#diff-36b6d20eb5aea66cf39f8d94111bd96513626ef7f61459f0d9e8e9507ded1d17) in the upjet provider template.
 
 ### `package/crossplane.yaml`
 

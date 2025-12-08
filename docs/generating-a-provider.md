@@ -45,7 +45,7 @@ variables in the `Makefile`:
   |`TERRAFORM_PROVIDER_DOWNLOAD_NAME` | The name of the provider in the [Terraform registry](https://releases.hashicorp.com/) |
   |`TERRAFORM_NATIVE_PROVIDER_BINARY` | The name of the binary in the Terraform provider. This follows the pattern `terraform-provider-{provider name}_v{provider version}`. |
   |`TERRAFORM_DOCS_PATH` | The relative path, from the root of the repository, where the provider resource documentation exist. |
-  
+
   For example, for the [Terraform GitHub provider], the variables are:
 
   ```makefile
@@ -57,7 +57,7 @@ variables in the `Makefile`:
   export TERRAFORM_DOCS_PATH := website/docs/r
   ```
 
-  Refer to [the Dockerfile](https://github.com/crossplane/upjet-provider-template/blob/main/cluster/images/upjet-provider-template/Dockerfile) to see the variables called when building the provider.
+  Refer to [the Dockerfile](https://github.com/jwefers/upjet-provider-template/blob/main/cluster/images/upjet-provider-template/Dockerfile) to see the variables called when building the provider.
 
 ## Configure the provider resources
 
@@ -143,7 +143,7 @@ variables in the `Makefile`:
     cat <<EOF > config/cluster/repository/config.go
     package repository
 
-    import "github.com/crossplane/upjet/v2/pkg/config"
+    import "github.com/jwefers/upjet/v2/pkg/config"
 
     // Configure configures individual resources by adding custom ResourceConfigurators.
     func Configure(p *config.Provider) {
@@ -162,7 +162,7 @@ variables in the `Makefile`:
     cat <<EOF > config/namespaced/repository/config.go
     package repository
 
-    import "github.com/crossplane/upjet/v2/pkg/config"
+    import "github.com/jwefers/upjet/v2/pkg/config"
 
     // Configure configures individual resources by adding custom ResourceConfigurators.
     func Configure(p *config.Provider) {
@@ -184,7 +184,7 @@ variables in the `Makefile`:
     cat <<EOF > config/cluster/branch/config.go
     package branch
 
-    import "github.com/crossplane/upjet/v2/pkg/config"
+    import "github.com/jwefers/upjet/v2/pkg/config"
 
     func Configure(p *config.Provider) {
         p.AddResourceConfigurator("github_branch", func(r *config.Resource) {
@@ -210,7 +210,7 @@ variables in the `Makefile`:
     cat <<EOF > config/namespaced/branch/config.go
     package branch
 
-    import "github.com/crossplane/upjet/v2/pkg/config"
+    import "github.com/jwefers/upjet/v2/pkg/config"
 
     func Configure(p *config.Provider) {
         p.AddResourceConfigurator("github_branch", func(r *config.Resource) {
@@ -236,7 +236,7 @@ variables in the `Makefile`:
     import (
         ...
 
-        ujconfig "github.com/crossplane/upjet/pkg/config"
+        ujconfig "github.com/jwefers/upjet/pkg/config"
 
     -   nullCluster "github.com/myorg/provider-github/config/cluster/null"
     -   nullNamespaced "github.com/myorg/provider-github/config/namespaced/null"
@@ -298,14 +298,14 @@ Now let's test our generated resources.
     mkdir examples/cluster/branch
     mkdir examples/namespaced/repository
     mkdir examples/namespaced/branch
-  
+
     # remove the sample directory which was an example in the template
     rm -rf examples/cluster/null
     rm -rf examples/namespaced/null
     ```
-  
+
     Create a provider secret template:
-  
+
     ```bash
     cat <<EOF > examples/cluster/providerconfig/secret.yaml.tmpl
     apiVersion: v1
@@ -336,10 +336,10 @@ Now let's test our generated resources.
         }
     EOF
     ```
-  
+
     Create example for `repository` resource, which will use
     `upjet-provider-template` repo as template for the repository to be created:
-  
+
     ```bash
     # cluster-scoped
     cat <<EOF > examples/cluster/repository/repository.yaml
@@ -357,7 +357,7 @@ Now let's test our generated resources.
       providerConfigRef:
         name: default
     EOF
-  
+
     # namespace-scoped
     cat <<EOF > examples/namespaced/repository/repository.yaml
     apiVersion: repository.github.m.crossplane.io/v1alpha1
@@ -379,7 +379,7 @@ Now let's test our generated resources.
 
     Create `branch` resource which refers to the above repository managed
     resource:
-  
+
     ```bash
     # cluster-scoped
     cat <<EOF > examples/cluster/branch/branch.yaml
@@ -507,7 +507,7 @@ your provider, you can learn more about
 [testing your resources](testing-with-uptest.md) with Uptest.
 
 [Terraform GitHub provider]: https://registry.terraform.io/providers/integrations/github/latest/docs
-[upjet-provider-template]: https://github.com/crossplane/upjet-provider-template
+[upjet-provider-template]: https://github.com/jwefers/upjet-provider-template
 [crossplane/build]: https://github.com/crossplane/build
 [github_repository]: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 [github_branch]: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch

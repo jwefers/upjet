@@ -16,12 +16,12 @@ import (
 	"github.com/pkg/errors"
 	"k8s.io/utils/ptr"
 
-	"github.com/crossplane/upjet/v2/pkg"
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/schema/traverser"
-	"github.com/crossplane/upjet/v2/pkg/types/comments"
-	"github.com/crossplane/upjet/v2/pkg/types/name"
-	"github.com/crossplane/upjet/v2/pkg/types/structtag"
+	"github.com/jwefers/upjet/v2/pkg"
+	"github.com/jwefers/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/schema/traverser"
+	"github.com/jwefers/upjet/v2/pkg/types/comments"
+	"github.com/jwefers/upjet/v2/pkg/types/name"
+	"github.com/jwefers/upjet/v2/pkg/types/structtag"
 )
 
 const (

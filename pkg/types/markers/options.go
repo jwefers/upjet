@@ -4,7 +4,7 @@
 
 package markers
 
-import "github.com/crossplane/upjet/v2/pkg/types/markers/kubebuilder"
+import "github.com/jwefers/upjet/v2/pkg/types/markers/kubebuilder"
 
 // Options represents marker options that Upjet need to parse or set.
 type Options struct {

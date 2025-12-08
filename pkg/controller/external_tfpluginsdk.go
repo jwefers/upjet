@@ -25,11 +25,11 @@ import (
 	"k8s.io/apimachinery/pkg/util/sets"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/metrics"
-	"github.com/crossplane/upjet/v2/pkg/resource"
-	"github.com/crossplane/upjet/v2/pkg/resource/json"
-	"github.com/crossplane/upjet/v2/pkg/terraform"
+	"github.com/jwefers/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/metrics"
+	"github.com/jwefers/upjet/v2/pkg/resource"
+	"github.com/jwefers/upjet/v2/pkg/resource/json"
+	"github.com/jwefers/upjet/v2/pkg/terraform"
 )
 
 type TerraformPluginSDKConnector struct {

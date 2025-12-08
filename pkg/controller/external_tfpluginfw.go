@@ -30,12 +30,12 @@ import (
 	"k8s.io/apimachinery/pkg/util/sets"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/upjet/v2/pkg/config"
-	"github.com/crossplane/upjet/v2/pkg/metrics"
-	"github.com/crossplane/upjet/v2/pkg/resource"
-	upjson "github.com/crossplane/upjet/v2/pkg/resource/json"
-	"github.com/crossplane/upjet/v2/pkg/terraform"
-	tferrors "github.com/crossplane/upjet/v2/pkg/terraform/errors"
+	"github.com/jwefers/upjet/v2/pkg/config"
+	"github.com/jwefers/upjet/v2/pkg/metrics"
+	"github.com/jwefers/upjet/v2/pkg/resource"
+	upjson "github.com/jwefers/upjet/v2/pkg/resource/json"
+	"github.com/jwefers/upjet/v2/pkg/terraform"
+	tferrors "github.com/jwefers/upjet/v2/pkg/terraform/errors"
 )
 
 // TerraformPluginFrameworkConnector is an external client, with credentials and
@@ -525,7 +525,7 @@ func (n *terraformPluginFrameworkExternalClient) Observe(ctx context.Context, mg
 
 	// TODO(cem): Consider skipping diff calculation to avoid potential config
 	// validation errors in the import path. See
-	// https://github.com/crossplane/upjet/pull/461
+	// https://github.com/jwefers/upjet/pull/461
 	planResponse, hasDiff, err := n.getDiffPlanResponse(ctx, tfStateValue)
 	if err != nil {
 		return managed.ExternalObservation{}, errors.Wrap(err, "cannot calculate diff")
