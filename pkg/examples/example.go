@@ -14,9 +14,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
-	xpmeta "github.com/crossplane/crossplane-runtime/v2/pkg/meta"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
+	xpmeta "github.com/jwefers/crossplane-runtime/v2/pkg/meta"
 	"github.com/pkg/errors"
 	"sigs.k8s.io/yaml"
 

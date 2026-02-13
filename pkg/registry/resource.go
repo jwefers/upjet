@@ -5,7 +5,7 @@
 package registry
 
 import (
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 

@@ -7,7 +7,7 @@ package terraform
 import (
 	"sync"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
 	"github.com/pkg/errors"
 
 	tferrors "github.com/jwefers/upjet/v2/pkg/terraform/errors"

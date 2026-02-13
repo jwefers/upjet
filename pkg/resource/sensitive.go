@@ -10,10 +10,10 @@ import (
 	"regexp"
 	"strings"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/reconciler/managed"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
+	v1 "github.com/jwefers/crossplane-runtime/v2/apis/common/v1"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/reconciler/managed"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 	"github.com/pkg/errors"
 	kerrors "k8s.io/apimachinery/pkg/api/errors"
 

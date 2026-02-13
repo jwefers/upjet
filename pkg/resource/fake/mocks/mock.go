@@ -12,8 +12,8 @@ import (
 	context "context"
 	reflect "reflect"
 
-	common "github.com/crossplane/crossplane-runtime/v2/apis/common"
 	gomock "github.com/golang/mock/gomock"
+	common "github.com/jwefers/crossplane-runtime/v2/apis/common"
 )
 
 // MockSecretClient is a mock of SecretClient interface.

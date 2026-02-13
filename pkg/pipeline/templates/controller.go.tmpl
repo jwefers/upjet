@@ -7,12 +7,12 @@ package {{ .Package }}
 import (
 	"time"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/event"
-	xpfeature "github.com/crossplane/crossplane-runtime/v2/pkg/feature"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/ratelimiter"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/reconciler/managed"
-	xpresource "github.com/crossplane/crossplane-runtime/v2/pkg/resource"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/statemetrics"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/event"
+	xpfeature "github.com/jwefers/crossplane-runtime/v2/pkg/feature"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/ratelimiter"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/reconciler/managed"
+	xpresource "github.com/jwefers/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/statemetrics"
 	"github.com/jwefers/upjet/v2/pkg/controller/handler"
 	tjcontroller "github.com/jwefers/upjet/v2/pkg/controller"
 	"github.com/jwefers/upjet/v2/pkg/metrics"

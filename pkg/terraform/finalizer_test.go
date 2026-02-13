@@ -8,10 +8,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
-	xpresource "github.com/crossplane/crossplane-runtime/v2/pkg/resource"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
+	xpresource "github.com/jwefers/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 	"github.com/pkg/errors"
 
 	"github.com/jwefers/upjet/v2/pkg/resource"

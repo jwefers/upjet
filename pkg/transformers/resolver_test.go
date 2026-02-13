@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 	"github.com/pkg/errors"
 	"github.com/spf13/afero"
 	"golang.org/x/tools/go/packages/packagestest"

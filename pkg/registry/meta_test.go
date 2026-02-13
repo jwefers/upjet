@@ -8,10 +8,10 @@ import (
 	"os"
 	"testing"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
-	xptest "github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
+	xptest "github.com/jwefers/crossplane-runtime/v2/pkg/test"
 	"gopkg.in/yaml.v3"
 )
 

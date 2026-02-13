@@ -8,10 +8,10 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
-	xpresource "github.com/crossplane/crossplane-runtime/v2/pkg/resource"
 	"github.com/hashicorp/terraform-plugin-go/tfprotov6"
 	tfsdk "github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
+	xpresource "github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 	"k8s.io/apimachinery/pkg/types"
 
 	"github.com/jwefers/upjet/v2/pkg/resource"

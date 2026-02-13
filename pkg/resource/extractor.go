@@ -5,9 +5,9 @@
 package resource
 
 import (
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
-	xpref "github.com/crossplane/crossplane-runtime/v2/pkg/reference"
-	xpresource "github.com/crossplane/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
+	xpref "github.com/jwefers/crossplane-runtime/v2/pkg/reference"
+	xpresource "github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 )
 
 // ExtractResourceID extracts the value of `status.atProvider.id`

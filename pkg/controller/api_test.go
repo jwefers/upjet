@@ -8,10 +8,10 @@ import (
 	"context"
 	"testing"
 
-	xpresource "github.com/crossplane/crossplane-runtime/v2/pkg/resource"
-	xpfake "github.com/crossplane/crossplane-runtime/v2/pkg/resource/fake"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
+	xpresource "github.com/jwefers/crossplane-runtime/v2/pkg/resource"
+	xpfake "github.com/jwefers/crossplane-runtime/v2/pkg/resource/fake"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"

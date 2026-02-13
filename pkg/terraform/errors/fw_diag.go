@@ -7,8 +7,8 @@ package errors
 import (
 	"strings"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
 	"github.com/hashicorp/terraform-plugin-framework/diag"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
 )
 
 // FrameworkDiagnosticsError returns an error representing

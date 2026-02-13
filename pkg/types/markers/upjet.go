@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
 
 	"github.com/jwefers/upjet/v2/pkg/types/structtag"
 )

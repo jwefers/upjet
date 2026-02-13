@@ -7,7 +7,7 @@ package controller
 import (
 	"time"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/controller"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/controller"
 
 	"github.com/jwefers/upjet/v2/pkg/config"
 	"github.com/jwefers/upjet/v2/pkg/terraform"

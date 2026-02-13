@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"slices"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"

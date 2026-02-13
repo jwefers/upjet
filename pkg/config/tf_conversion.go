@@ -10,8 +10,8 @@ import (
 	"reflect"
 	"slices"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
 	"github.com/hashicorp/terraform-plugin-go/tftypes"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
 	"github.com/pkg/errors"
 
 	"github.com/jwefers/upjet/v2/pkg/config/conversion"

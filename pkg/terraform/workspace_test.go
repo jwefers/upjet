@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 	"github.com/pkg/errors"
 	"github.com/spf13/afero"
 	k8sExec "k8s.io/utils/exec"

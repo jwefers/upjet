@@ -14,9 +14,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 	"github.com/pkg/errors"
 	clock "k8s.io/utils/clock/testing"
 	"k8s.io/utils/exec"

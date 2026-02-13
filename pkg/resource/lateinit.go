@@ -10,9 +10,9 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
-	xpmeta "github.com/crossplane/crossplane-runtime/v2/pkg/meta"
-	xpresource "github.com/crossplane/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
+	xpmeta "github.com/jwefers/crossplane-runtime/v2/pkg/meta"
+	xpresource "github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 	"github.com/pkg/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 

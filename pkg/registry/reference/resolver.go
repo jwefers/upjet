@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
 	"github.com/pkg/errors"
 
 	"github.com/jwefers/upjet/v2/pkg/config"

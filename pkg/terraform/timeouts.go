@@ -5,7 +5,7 @@
 package terraform
 
 import (
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
 
 	"github.com/jwefers/upjet/v2/pkg/config"
 	"github.com/jwefers/upjet/v2/pkg/resource/json"

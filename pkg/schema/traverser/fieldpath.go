@@ -4,7 +4,7 @@
 
 package traverser
 
-import "github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
+import "github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
 
 const (
 	// FieldPathWildcard is the wildcard expression in fieldpath indices.

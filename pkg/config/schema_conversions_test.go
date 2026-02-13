@@ -7,9 +7,9 @@ package config
 import (
 	"testing"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 )
 
 func TestSingletonListEmbedder(t *testing.T) {

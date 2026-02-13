@@ -13,8 +13,8 @@ import (
 	"text/template"
 	"text/template/parse"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
 )
 
 const (

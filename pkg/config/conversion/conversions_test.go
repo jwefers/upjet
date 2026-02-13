@@ -9,12 +9,12 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/fieldpath"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource/fake"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/fieldpath"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource/fake"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/utils/ptr"
 )

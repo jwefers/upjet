@@ -5,7 +5,7 @@
 package conversion
 
 import (
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 

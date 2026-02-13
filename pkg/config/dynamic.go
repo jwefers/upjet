@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
 	fwresource "github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-go/tftypes"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
 )
 
 func frameworkDynamicTypeAttributePaths(name string, resource fwresource.Resource) ([]string, error) {

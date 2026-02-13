@@ -7,11 +7,11 @@ package errors
 import (
 	"testing"
 
-	xperrors "github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
 	fwdiag "github.com/hashicorp/terraform-plugin-framework/diag"
 	fwpath "github.com/hashicorp/terraform-plugin-framework/path"
+	xperrors "github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 )
 
 // fakeDiag is a minimal implementation of the framework diag.Diagnostic

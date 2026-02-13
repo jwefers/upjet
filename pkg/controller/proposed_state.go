@@ -8,10 +8,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
 	rschema "github.com/hashicorp/terraform-plugin-framework/resource/schema"
 	"github.com/hashicorp/terraform-plugin-go/tfprotov6"
 	"github.com/hashicorp/terraform-plugin-go/tftypes"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
 )
 
 // adapted from https://github.com/hashicorp/terraform/blob/v1.5.5/internal/plans/objchange/objchange.go

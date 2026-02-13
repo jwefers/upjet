@@ -84,7 +84,7 @@ You can refer to [Crossplane v2 compatibility PR](https://github.com/jwefers/upj
 ### Update your go.mod to include latest `upjet`, `crossplane-runtime` and `crossplane-tools`
 
 ```go
-	github.com/crossplane/crossplane-runtime/v2 v2.0.0
+	github.com/jwefers/crossplane-runtime/v2 v2.0.0
 	github.com/crossplane/crossplane-tools master
 	github.com/jwefers/upjet/v2 v2.1.0
 ```
@@ -109,7 +109,7 @@ In all of your source files, using your favorite editor or CLI tools like `sed`,
 do the following replacements in your import paths
 
 ```text
-github.com/crossplane/crossplane-runtime/ => github.com/crossplane/crossplane-runtime/v2/
+github.com/crossplane/crossplane-runtime/ => github.com/jwefers/crossplane-runtime/v2/
 github.com/jwefers/upjet/ => github.com/jwefers/upjet/v2/
 ```
 

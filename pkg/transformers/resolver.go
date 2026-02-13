@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
 	"github.com/pkg/errors"
 	"github.com/spf13/afero"
 	"golang.org/x/tools/go/ast/astutil"
@@ -540,7 +540,7 @@ func addMRVariableDeclarations(f *ast.File) map[string]string {
 		return true
 	})
 	return map[string]string{
-		`"github.com/crossplane/crossplane-runtime/v2/pkg/resource"`: "xpresource",
+		`"github.com/jwefers/crossplane-runtime/v2/pkg/resource"`: "xpresource",
 	}
 }
 

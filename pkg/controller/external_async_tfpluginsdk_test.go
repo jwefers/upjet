@@ -8,13 +8,13 @@ import (
 	"context"
 	"testing"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/reconciler/managed"
-	xpresource "github.com/crossplane/crossplane-runtime/v2/pkg/resource"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	"github.com/google/go-cmp/cmp"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	tf "github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/reconciler/managed"
+	xpresource "github.com/jwefers/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
