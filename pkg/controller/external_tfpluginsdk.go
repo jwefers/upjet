@@ -518,18 +518,9 @@ func (n *terraformPluginSDKExternal) Observe(ctx context.Context, mg xpresource.
 		diffState.ID = ""
 	}
 
-	n.instanceDiff = nil
-	policySet := sets.New[xpv1.ManagementAction](mg.(resource.Terraformed).GetManagementPolicies()...)
-	observeOnlyPolicy := sets.New(xpv1.ManagementActionObserve)
-	isObserveOnlyPolicy := policySet.Equal(observeOnlyPolicy)
-	if !isObserveOnlyPolicy || !n.isManagementPoliciesEnabled {
-		n.instanceDiff, err = n.getResourceDataDiff(mg.(resource.Terraformed), ctx, diffState, resourceExists)
-		if err != nil {
-			return managed.ExternalObservation{}, errors.Wrap(err, "cannot compute the instance diff")
-		}
-	}
-	if n.instanceDiff == nil {
-		n.instanceDiff = tf.NewInstanceDiff()
+	n.instanceDiff, err = n.getResourceDataDiff(mg.(resource.Terraformed), ctx, diffState, resourceExists)
+	if err != nil {
+		return managed.ExternalObservation{}, errors.Wrap(err, "cannot compute the instance diff")
 	}
 
 	hasDiff := !n.instanceDiff.Empty()
@@ -565,6 +556,7 @@ func (n *terraformPluginSDKExternal) Observe(ctx context.Context, mg xpresource.
 			return managed.ExternalObservation{}, errors.Wrap(err, "cannot marshal the attributes of the new state for late-initialization")
 		}
 
+		policySet := sets.New[xpv1.ManagementAction](mg.(resource.Terraformed).GetManagementPolicies()...)
 		policyHasLateInit := policySet.HasAny(xpv1.ManagementActionLateInitialize, xpv1.ManagementActionAll)
 		if policyHasLateInit {
 			specUpdateRequired, err = mg.(resource.Terraformed).LateInitialize(buff)
