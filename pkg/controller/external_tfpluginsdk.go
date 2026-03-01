@@ -250,6 +250,9 @@ func (c *TerraformPluginSDKConnector) Connect(ctx context.Context, mg xpresource
 	params = c.processParamsWithHCLParser(c.config.TerraformResource.Schema, params)
 
 	schemaBlock := c.config.TerraformResource.CoreConfigSchema()
+	// Normalize params to convert null/missing optional blocks to empty slices.
+	// This prevents panics when providers call ForEachElement on null collections.
+	params = terraform.NormalizeParams(params, c.config.TerraformResource)
 	rawConfig, err := schema.JSONMapToStateValue(params, schemaBlock)
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to convert params JSON map to cty.Value")
