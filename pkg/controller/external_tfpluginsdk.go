@@ -263,6 +263,9 @@ func (c *TerraformPluginSDKConnector) Connect(ctx context.Context, mg xpresource
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to convert params JSON map to cty.Value")
 	}
+	// Normalize null values to empty collections to prevent panics in terraform-plugin-sdk
+	// when iterating over nested blocks that are null
+	rawConfig = normalizeNullValues(rawConfig, c.config.TerraformResource.Schema)
 	if !opTracker.HasState() {
 		logger.Debug("Instance state not found in cache, reconstructing...")
 		tfState, err := tr.GetObservation()
