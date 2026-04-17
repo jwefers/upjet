@@ -143,6 +143,7 @@ func (n *terraformPluginSDKAsyncExternal) Create(_ context.Context, mg xpresourc
 	}
 
 	ctx, cancel := context.WithDeadline(context.Background(), n.opTracker.LastOperation.StartTime().Add(defaultAsyncTimeout))
+	done := make(chan bool)
 	go func() {
 		// The order of deferred functions, executed last-in-first-out, is
 		// significant. The context should be canceled last, because it is
@@ -164,13 +165,14 @@ func (n *terraformPluginSDKAsyncExternal) Create(_ context.Context, mg xpresourc
 			if cErr := n.callback.Create(name)(err, ctx); cErr != nil {
 				n.opTracker.logger.Info("Async create callback failed", "error", cErr.Error())
 			}
+			done <- true
 		}()
 		defer ph.recoverIfPanic(ctx)
 
 		n.opTracker.logger.Debug("Async create starting...", "tfID", n.opTracker.GetTfID())
 		_, ph.err = n.terraformPluginSDKExternal.Create(ctx, mg)
 	}()
-
+	<-done
 	return managed.ExternalCreation{}, n.opTracker.LastOperation.Error()
 }
 
