@@ -1082,6 +1082,11 @@ func (m *mockTPFProviderServer) UpgradeResourceIdentity(_ context.Context, _ *tf
 	panic("implement me")
 }
 
+func (m *mockTPFProviderServer) GenerateResourceConfig(_ context.Context, _ *tfprotov6.GenerateResourceConfigRequest) (*tfprotov6.GenerateResourceConfigResponse, error) {
+	// TODO implement me
+	panic("implement me")
+}
+
 func (m *mockTPFProviderServer) GetResourceIdentitySchemas(_ context.Context, _ *tfprotov6.GetResourceIdentitySchemasRequest) (*tfprotov6.GetResourceIdentitySchemasResponse, error) {
 	// TODO implement me
 	panic("implement me")
