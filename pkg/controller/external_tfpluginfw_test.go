@@ -1123,6 +1123,11 @@ func (m *mockTPFProviderServer) ImportResourceState(_ context.Context, _ *tfprot
 	panic("implement me")
 }
 
+func (m *mockTPFProviderServer) GenerateResourceConfig(_ context.Context, _ *tfprotov6.GenerateResourceConfigRequest) (*tfprotov6.GenerateResourceConfigResponse, error) {
+	// TODO implement me
+	panic("implement me")
+}
+
 func (m *mockTPFProviderServer) ReadDataSource(_ context.Context, _ *tfprotov6.ReadDataSourceRequest) (*tfprotov6.ReadDataSourceResponse, error) {
 	// TODO implement me
 	panic("implement me")
