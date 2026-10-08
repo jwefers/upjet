@@ -262,7 +262,7 @@ func TestTerraformPluginSDKObserve(t *testing.T) {
 					ResourceUpToDate:        false,
 					ResourceLateInitialized: true,
 					ConnectionDetails:       nil,
-					Diff:                    "",
+					Diff:                    `~ name: "example2" -> "example"`,
 				},
 			},
 		},
@@ -277,6 +277,81 @@ func TestTerraformPluginSDKObserve(t *testing.T) {
 			}
 			if diff := cmp.Diff(tc.want.err, err, test.EquateErrors()); diff != "" {
 				t.Errorf("\n%s\nConnect(...): -want error, +got error:\n", diff)
+			}
+		})
+	}
+}
+
+func TestHumanReadableDiff(t *testing.T) {
+	cases := map[string]struct {
+		diff *tf.InstanceDiff
+		want string
+	}{
+		"Nil": {
+			diff: nil,
+			want: "",
+		},
+		"Empty": {
+			diff: tf.NewInstanceDiff(),
+			want: "",
+		},
+		"ChangedAttribute": {
+			diff: &tf.InstanceDiff{
+				Attributes: map[string]*tf.ResourceAttrDiff{
+					"name": {Old: "old-value", New: "new-value"},
+				},
+			},
+			want: `~ name: "old-value" -> "new-value"`,
+		},
+		"SensitiveAttributeIsRedacted": {
+			diff: &tf.InstanceDiff{
+				Attributes: map[string]*tf.ResourceAttrDiff{
+					"password": {Old: "old-secret", New: "new-secret", Sensitive: true},
+				},
+			},
+			want: `~ password: "(sensitive value)" -> "(sensitive value)"`,
+		},
+		"RemovedAttribute": {
+			diff: &tf.InstanceDiff{
+				Attributes: map[string]*tf.ResourceAttrDiff{
+					"tag": {Old: "old-value", NewRemoved: true},
+				},
+			},
+			want: `- tag: "old-value"`,
+		},
+		"ComputedAttribute": {
+			diff: &tf.InstanceDiff{
+				Attributes: map[string]*tf.ResourceAttrDiff{
+					"id": {Old: "", NewComputed: true},
+				},
+			},
+			want: `~ id: "" -> (known after apply)`,
+		},
+		"MultipleAttributesAreSortedByKey": {
+			diff: &tf.InstanceDiff{
+				Attributes: map[string]*tf.ResourceAttrDiff{
+					"zebra": {Old: "a", New: "b"},
+					"apple": {Old: "c", New: "d"},
+				},
+			},
+			want: "~ apple: \"c\" -> \"d\"\n~ zebra: \"a\" -> \"b\"",
+		},
+		"DestroyIsAppended": {
+			diff: &tf.InstanceDiff{
+				Attributes: map[string]*tf.ResourceAttrDiff{
+					"name": {Old: "old-value", New: "new-value", RequiresNew: true},
+				},
+				Destroy: true,
+			},
+			want: "~ name: \"old-value\" -> \"new-value\"\n- resource will be destroyed and recreated",
+		},
+	}
+
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			got := humanReadableDiff(tc.diff)
+			if diff := cmp.Diff(tc.want, got); diff != "" {
+				t.Errorf("\n%s\nhumanReadableDiff(...): -want, +got:\n", diff)
 			}
 		})
 	}

@@ -7,6 +7,7 @@ package controller
 import (
 	"context"
 	"fmt"
+	"sort"
 	"strings"
 	"time"
 
@@ -498,6 +499,46 @@ func (n *terraformPluginSDKExternal) getResourceDataDiff(tr resource.Terraformed
 	return instanceDiff, nil
 }
 
+// humanReadableDiff renders the supplied Terraform instance diff as a
+// human-readable, deterministically ordered text representation, suitable
+// for being surfaced to end users, e.g. in a Kubernetes condition message.
+// Values of attributes marked as sensitive in the Terraform schema are
+// redacted. An empty string is returned if the diff has no changes.
+func humanReadableDiff(instanceDiff *tf.InstanceDiff) string {
+	if instanceDiff == nil || instanceDiff.Empty() {
+		return ""
+	}
+	keys := make([]string, 0, len(instanceDiff.Attributes))
+	for k, ad := range instanceDiff.Attributes {
+		if ad == nil {
+			continue
+		}
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+
+	lines := make([]string, 0, len(keys))
+	for _, k := range keys {
+		ad := instanceDiff.Attributes[k]
+		oldValue, newValue := ad.Old, ad.New
+		if ad.Sensitive {
+			oldValue, newValue = "(sensitive value)", "(sensitive value)"
+		}
+		switch {
+		case ad.NewRemoved:
+			lines = append(lines, fmt.Sprintf("- %s: %q", k, oldValue))
+		case ad.NewComputed:
+			lines = append(lines, fmt.Sprintf("~ %s: %q -> (known after apply)", k, oldValue))
+		default:
+			lines = append(lines, fmt.Sprintf("~ %s: %q -> %q", k, oldValue, newValue))
+		}
+	}
+	if instanceDiff.Destroy {
+		lines = append(lines, "- resource will be destroyed and recreated")
+	}
+	return strings.Join(lines, "\n")
+}
+
 func (n *terraformPluginSDKExternal) Observe(ctx context.Context, mg xpresource.Managed) (managed.ExternalObservation, error) { //nolint:gocyclo
 	var err error
 	n.logger.Debug("Observing the external resource")
@@ -634,11 +675,17 @@ func (n *terraformPluginSDKExternal) Observe(ctx context.Context, mg xpresource.
 		}
 	}
 
+	var diffStr string
+	if resourceExists && hasDiff {
+		diffStr = humanReadableDiff(n.instanceDiff)
+	}
+
 	return managed.ExternalObservation{
 		ResourceExists:          resourceExists,
 		ResourceUpToDate:        !hasDiff,
 		ConnectionDetails:       connDetails,
 		ResourceLateInitialized: specUpdateRequired,
+		Diff:                    diffStr,
 	}, nil
 }
 
